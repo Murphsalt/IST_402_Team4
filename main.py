@@ -32,8 +32,8 @@ def not_found(error):
 
 @auth.get_password #creates user
 def get_password(username):
-    if username == 'prm5207':
-        return 'windowsserver08'
+    if username == 'pi':
+        return 'team4pi'
     return None
 
 @auth.error_handler
