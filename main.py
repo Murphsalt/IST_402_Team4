@@ -1,3 +1,5 @@
+""" Refrence: https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask """
+
 from flask import *
 from flask_httpauth import HTTPBasicAuth
 import datetime
