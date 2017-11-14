@@ -28,6 +28,20 @@ tasks = [
 def get_tasks():
     return jsonify({'tasks': tasks})
 
+@app.route('/', methods=['POST'])
+def create_task():
+    currentTime = datetime.datetime.now()  # current time on server
+    if not request.json or not 'Title' in request.json:
+        abort(400)
+    task = {
+        'RaspberryPi Number': tasks[-1]['RaspberryPi Number'],
+        'Title': request.json['Title'],
+        'Temperature': request.json.get('Temperature', ""),
+        'Time': currentTime
+    }
+    tasks.append(task)
+    return jsonify({'task': task}), 201
+
 @app.errorhandler(404) #error handler
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
@@ -43,4 +57,4 @@ def unauthorized():
     return make_response(jsonify({'error': 'Unauthorized access'}), 401)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000,debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
