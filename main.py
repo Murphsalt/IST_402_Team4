@@ -34,7 +34,7 @@ def create_task():
     if not request.json or not 'Title' in request.json:
         abort(400)
     task = {
-        'RaspberryPi Number': tasks[-1]['RaspberryPi Number'],
+        'RaspberryPi Number': request.json['RaspberryPi Number'],
         'Title': request.json['Title'],
         'Temperature': request.json.get('Temperature', ""),
         'Time': currentTime
