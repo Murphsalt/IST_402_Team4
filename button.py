@@ -4,7 +4,7 @@ import socket
 import random
 import requests
 
-url= "http://:8080" '''The IPaddress your conntecting to'''
+url= "http://:8080" #The IPaddress your conntecting to
 
 hostname = socket.gethostname()
 
@@ -22,7 +22,7 @@ while True:
 	if input_state == False:
 
 		rounded_number = round(random.uniform(greaterThan, lessThan), digits)
-                '''Change the Pi number to the number on your box'''
+                #Change the Pi number to the number on your box
 		payload = {'RaspberryPi Number':'26',
                'Title': 'Temperature of RaspberryPi',
                'Temperature':rounded_number,
