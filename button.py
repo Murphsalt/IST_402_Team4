@@ -28,6 +28,6 @@ while True:
                'Temperature':rounded_number,
                'Time':''}
 
-    print(payload)
-    post_data = requests.post(url, json=payload)
+    		print(payload)
+   		post_data = requests.post(url, json=payload)
 		time.sleep(0.2)
